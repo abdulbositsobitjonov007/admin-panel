@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link href="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.css" rel="stylesheet" />
+
+</head>
+<body>
+
+    <header class="pt-[40px] px-[30px]">
+        <div class="container mx-auto px-[20px]">
+            <div class="flex items-center gap-[30px]">
+                <input class="max-w-[300px] w-full border-[2px] hover:border-[blue] cursor-pointer rounded-[8px]" type="search" placeholder="Search students ...">
+                <select class="rounded-[8px] border-[2px] hover:border-[blue] cursor-pointer" name="" id="">
+                    <option class="rounded-[8px]" value="N2">N2</option>
+                    <option value="N3">N3</option>
+                    <option value="N4">N4</option>
+                    <option value="N5">N5</option>
+                </select>
+                <button id="add-student" class="rounded-[8px] border-[grey] p-[7px] border-[2px] hover:border-[greenyellow] hover duration-300 cursor-pointer">ADD STUDENT</button>
+            </div>
+        </div>
+    </header>
+ 
+    <main>
+        <section>
+            <div class="container mx-auto p-[20px]">
+                <div class="relative overflow-x-auto shadow-md sm:rounded-lg">
+                    <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
+                        <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+                            <tr>
+                                <th scope="col" class="px-6 py-3">
+                                    FIRSTNAME
+                                </th>
+                                <th scope="col" class="px-6 py-3">
+                                    LASTNAME
+                                </th>
+                                <th scope="col" class="px-6 py-3">
+                                    GROUP
+                                </th>
+                                <th scope="col" class="px-6 py-3">
+                                    WORKING?
+                                </th>
+                                <th scope="col" class="px-6 py-3">
+                                    MANAGING
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody id="tbody">
+                            
+                        </tbody>
+                    </table>
+                </div>
+
+            </div>
+        </section>
+
+        <div id="outer-modal" class="hidden fixed z-[5] top-0 left-0 w-full h-full flex items-center justify-center bg-[grey]/50">
+            <div id="inner-modal"
+                class="container max-w-[450px] h-[500px] bg-[white] gap-[40px] flex flex-col items-center justify-center">
+                <h1 class="text-[24px] font-bold">Add a student</h1>
+                <form id="form" class="flex flex-col items-center gap-[30px] w-full">
+                    <input required class="max-w-[300px] h-[50px] border-[2px] border-[blue] rounded-[5px] w-full px-[15px] "
+                        type="text" placeholder="Firstname">
+                    <input required class="max-w-[300px] h-[50px] border-[2px] border-[blue] rounded-[5px] w-full px-[15px] "
+                        type="text" placeholder="Lastname">
+                        <select class="rounded-[5px] w-full h-[50px] max-w-[300px] border-[2px] border-[blue] cursor-pointer" name="" id="">
+                            <option class="rounded-[8px]" value="N2">N2</option>
+                            <option value="N3">N3</option>
+                            <option value="N4">N4</option>
+                            <option value="N5">N5</option>
+                            </select>
+                    <div class="flex items-center gap-[15px]">
+                        <label class="" for="iswork">
+                            <input id="iswork" class="w-[25px] h-[25px] border-[2px] border-[blue] rounded-[5px] " type="checkbox"
+                               >
+                            Working ?
+                        </label>
+                        
+                    </div>
+                    <button type="submit"
+                        class="max-w-[300px] h-[50px] font-bold text-[24px] text-[white] bg-[blue] rounded-[5px] w-full px-[15px] cursor-pointer hover:bg-[greenyellow] hover:text-[white] duration-300">ADD</button>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <script src="./js/main.js"></script>
+</body>
+</html>
