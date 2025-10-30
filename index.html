@@ -10,12 +10,17 @@
 </head>
 <body>
 
-    <header class="pt-[40px] px-[30px]">
+    <header class="pt-[40px] px-[30px] z-[2]">
         <div class="container mx-auto px-[20px]">
             <div class="flex items-center gap-[30px]">
-                <input class="max-w-[300px] w-full border-[2px] hover:border-[blue] cursor-pointer rounded-[8px]" type="search" placeholder="Search students ...">
-                <select class="rounded-[8px] border-[2px] hover:border-[blue] cursor-pointer" name="" id="">
-                    <option class="rounded-[8px]" value="N2">N2</option>
+                <div class="flex relative ">
+                    <input id="search" class="max-w-[300px] w-full border-[2px] hover:border-[blue] cursor-pointer rounded-[8px]" type="search"
+                        placeholder="Search students ...">
+                </div>
+                
+                <select id="select-filter" class="rounded-[8px] border-[2px] hover:border-[blue] cursor-pointer" name="" id="">
+                    <option class="rounded-[8px]" value="All">All</option>
+                    <option value="N2">N2</option>
                     <option value="N3">N3</option>
                     <option value="N4">N4</option>
                     <option value="N5">N5</option>
@@ -30,8 +35,11 @@
             <div class="container mx-auto p-[20px]">
                 <div class="relative overflow-x-auto shadow-md sm:rounded-lg">
                     <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
-                        <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+                        <thead id="thead" class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
                             <tr>
+                                <th scope="col" class="px-6 py-3">
+                                    №
+                                </th>
                                 <th scope="col" class="px-6 py-3">
                                     FIRSTNAME
                                 </th>
@@ -63,11 +71,11 @@
                 class="container max-w-[450px] h-[500px] bg-[white] gap-[40px] flex flex-col items-center justify-center">
                 <h1 class="text-[24px] font-bold">Add a student</h1>
                 <form id="form" class="flex flex-col items-center gap-[30px] w-full">
-                    <input required class="max-w-[300px] h-[50px] border-[2px] border-[blue] rounded-[5px] w-full px-[15px] "
+                    <input id="nam" required class="max-w-[300px] h-[50px] border-[2px] border-[blue] rounded-[5px] w-full px-[15px] "
                         type="text" placeholder="Firstname">
-                    <input required class="max-w-[300px] h-[50px] border-[2px] border-[blue] rounded-[5px] w-full px-[15px] "
+                    <input id="sur" required class="max-w-[300px] h-[50px] border-[2px] border-[blue] rounded-[5px] w-full px-[15px] "
                         type="text" placeholder="Lastname">
-                        <select class="rounded-[5px] w-full h-[50px] max-w-[300px] border-[2px] border-[blue] cursor-pointer" name="" id="">
+                        <select id="sel" class="rounded-[5px] w-full h-[50px] max-w-[300px] border-[2px] border-[blue] cursor-pointer" name="" id="">
                             <option class="rounded-[8px]" value="N2">N2</option>
                             <option value="N3">N3</option>
                             <option value="N4">N4</option>
@@ -82,7 +90,7 @@
                         
                     </div>
                     <button type="submit"
-                        class="max-w-[300px] h-[50px] font-bold text-[24px] text-[white] bg-[blue] rounded-[5px] w-full px-[15px] cursor-pointer hover:bg-[greenyellow] hover:text-[white] duration-300">ADD</button>
+                        class="max-w-[300px] h-[50px] font-bold text-[24px] text-[white] bg-[blue] rounded-[5px] w-full px-[15px] cursor-pointer hover:bg-[greenyellow] hover:text-[white] duration-300"><span id="change-btn">Add</span> a student</button>
                 </form>
             </div>
         </div>
